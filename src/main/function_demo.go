@@ -12,7 +12,7 @@ type Circle struct {
 func main() {
 	/*
 			【函数定义】
-		func function_name([parameter list])[return_type]{
+		func function_name([parameter list])[return_value_list return_type_list]{
 			//TODO
 		}
 		func : 函数有func开始声明
