@@ -5,26 +5,25 @@ import "fmt"
 func main() {
 	s := []int{0, 1, 2, 2, 4, 2, 2, 7, 8, 9}
 
-	f := filter(s)
+	f := filter(s, even)
 
-	fmt.Println(f(2))
+	fmt.Println(f)
 
 }
 
-func filter(s []int) func(int) bool {
-	a := make([]int, 1)
-	flag := false
-	return func(i int) bool {
-		for _, v := range s {
-			if v == i {
-				a = append(a, v)
-				flag = true
-			}
+func filter(s []int, fn func(int) bool) []int {
+	var res []int
+	for _, v := range s {
+		if fn(v) {
+			res = append(res, v)
 		}
-		a = a[1:]
-		for _, iv := range a {
-			fmt.Println(iv)
-		}
-		return flag
 	}
+	return res
+}
+
+func even(n int) bool {
+	if n%2 == 0 {
+		return true
+	}
+	return false
 }
