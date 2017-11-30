@@ -26,13 +26,13 @@ func (c car) getValue() float32 {
 	return c.price
 }
 
-func showValue(v valuable){
-	fmt.Printf("value of the asset is %f\n",v.getValue())
+func showValue(v valuable) {
+	fmt.Printf("value of the asset is %f\n", v.getValue())
 }
 
 func main() {
-	var o valuable = stockPosition{"Golang",99.9,4}
+	var o valuable = stockPosition{"Golang", 99.9, 4}
 	showValue(o)
-	o = car{"BMW","M3",66500}
+	o = car{"BMW", "M3", 66500}
 	showValue(o)
 }
