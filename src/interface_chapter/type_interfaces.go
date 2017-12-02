@@ -1,8 +1,8 @@
 package main
 
 import (
-	"math"
 	"fmt"
+	"math"
 )
 
 type Square struct {
@@ -37,5 +37,14 @@ func main() {
 		fmt.Printf("The type of areaInfo is :%T\n", u)
 	} else {
 		fmt.Println("areainfo does not contain a variable of type Circle")
+	}
+
+	switch t := areaInfo.(type) {
+	case *Square:
+		fmt.Printf("Type Square %T with value %v\n", t, t)
+	case *Circle:
+		fmt.Printf("Type Circle %T with value %v\n", t, t)
+	default:
+		fmt.Printf("Unexpected type %T", t)
 	}
 }
